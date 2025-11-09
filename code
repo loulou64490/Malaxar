@@ -15,7 +15,7 @@ function malaxar {
     shift $((OPTIND - 1))
 
     case ${1: -1} in
-        'c' ) gcc "$1" -Wall -Wextra $fast -lm -lmylib -g -o a
+        'c' ) gcc "$1" -Wall -Wextra $fast -lm -g -o a
         if [ $valgrind -eq 0 ]; then
             ./a "${@:2}"
         else
