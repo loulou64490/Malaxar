@@ -23,7 +23,7 @@ function malaxar {
 
     local nom_prog=${1/.c/}
     case ${1: -1} in
-        'c' ) gcc "$1" -Wall -Wextra $fast -lm -lmylib -g -o $nom_prog
+        'c' ) gcc "$1" -Wall -Wextra $fast -lm -g -o $nom_prog
         if [ $valgrind -eq 0 ]; then
             ./"$nom_prog" "${@:2}"
         else
